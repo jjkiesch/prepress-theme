@@ -1,0 +1,29 @@
+{
+  "name": "prepress-theme",
+  "version": "0.0.0",
+  "description": "PrePress theme",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjkiesch/prepress-theme.git"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "grunt"
+  ],
+  "author": "Josh Kieschnick <jjkiesch@gmail.com>",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/jjkiesch/prepress-theme/issues"
+  },
+  "homepage": "https://github.com/jjkiesch/prepress-theme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-symlink": "^0.3.0",
+    "load-grunt-tasks": "^1.0.0"
+  }
+}

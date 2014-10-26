@@ -1,0 +1,16 @@
+{
+  "name": "prepress-theme",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jjkiesch/prepress-theme",
+  "authors": [
+    "Josh Kieschnick <jjkiesch@gmail.com>"
+  ],
+  "description": "PrePress theme",
+  "keywords": [
+    "wordpress",
+    "theme",
+    "grunt"
+  ],
+  "license": "GPL",
+  "private": true
+}
