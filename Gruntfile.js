@@ -14,22 +14,40 @@ module.exports = function(grunt) {
 
   // Configure grunt tasks
   grunt.initConfig({
+    yeoman: config,
+
     symlink: {
       options: {
         overwrite: true
       },
       dev: {
         src: 'theme',
-        dest: config.contentDir + 'themes/' + config.themeName
+        dest: '<%= yeoman.contentDir %>/themes/<%= yeoman.themeName %>'
       }
     },
 
     compass: {
       dev: {
         options: {
-          sassDir: config.theme + 'scss',
-          cssDir: config.theme + 'css'
+          sassDir: '<%= yeoman.theme %>/scss',
+          cssDir: '<%= yeoman.theme %>/css'
         }
+      }
+    },
+
+    watch: {
+      compass: {
+        files: ['<%= yeoman.theme %>/scss/{,*/}*.scss'],
+        tasks: ['compass:dev']
+      },
+      livereload: {
+        options: {
+          livereload: true
+        },
+        files: [
+          '<%= yeoman.theme %>/{,*/}*.php',
+          '<%= yeoman.theme %>/css/{,*/}*.css'
+        ]
       }
     }
   });
