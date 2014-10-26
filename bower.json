@@ -11,6 +11,8 @@
     "theme",
     "grunt"
   ],
-  "license": "GPL",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass-official": "~3.2.0+2"
+  }
 }
