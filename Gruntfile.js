@@ -58,6 +58,34 @@ module.exports = function(grunt) {
           '<%= yeoman.theme %>/css/{,*/}*.css'
         ]
       }
+    },
+
+    wiredep: {
+      wordpress: {
+        src: ['<%= yeoman.theme %>/functions.php'],
+        fileTypes: {
+          php: {
+            block: /(([ \t]*)\/\/\s*bower:*(\S*))(\n|\r|.)*?(\/\/\s*endbower)/gi,
+            detect: {
+              css: /wp_enqueue_style.*get_template_directory_uri.*['"]\/(.*\.css)/gi,
+              js: /wp_enqueue_script.*get_template_directory_uri.*['"]\/(.*\.js)/gi
+            },
+            replace: {
+              css: function(filePath) {
+                var handle = config.themeName + '-' + filePath.match(/.*\/(.*)\.css/)[1];
+                return 'wp_enqueue_style( \'' + handle + '\', get_template_directory_uri() . \'/' + filePath + '\' );';
+              },
+              js: function(filePath) {
+                var handle = config.themeName + '-' + filePath.match(/.*\/(.*)\.js/)[1];
+                return 'wp_enqueue_script( \''+ handle + '\', get_template_directory_uri() . \'/' + filePath + '\', array(), null, true );';
+              }
+            }
+          }
+        }
+      },
+      sass: {
+        src: ['<%= yeoman.theme %>/scss{,*/}*.scss']
+      }
     }
   });
 
