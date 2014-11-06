@@ -34,7 +34,7 @@ module.exports = function(grunt) {
         imagesDir: '<%= yeoman.theme %>/images',
         javascriptsDir: '<%= yeoman.theme %>/js',
         fontsDir: '<%= yeoman.theme %>/fonts',
-        importPath: './bower_components',
+        importPath: './<%= yeoman.theme %>/bower_components',
         relativeAssets: true
       },
       dev: {
@@ -95,6 +95,7 @@ module.exports = function(grunt) {
     }
 
     grunt.task.run([
+      'wiredep',
       'symlink:dev',
       'compass:dev',
       'watch'
